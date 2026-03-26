@@ -40,9 +40,7 @@ public class AutherController {
 
 	@PostMapping("/insert")
 	public ResponseEntity<Auther> insert(@RequestBody Auther auther) {
-		if (auther.getId() != null) {
-			throw new RuntimeException("Author already has ID");
-		}
+		
 		return ResponseEntity.ok(autherService.insert(auther));
 	}
 
