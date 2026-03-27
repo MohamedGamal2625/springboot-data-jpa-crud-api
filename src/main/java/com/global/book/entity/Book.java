@@ -1,5 +1,8 @@
 package com.global.book.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -17,6 +20,7 @@ public class Book {
 	private String name;
 	private Double price;
 	@ManyToOne
+	@JsonIgnoreProperties("books") 
 	@JoinColumn(name = "auther_id")
 	Auther auther;
 
